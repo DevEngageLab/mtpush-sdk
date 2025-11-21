@@ -58,7 +58,7 @@ let package = Package(
                 .linkedFramework("UserNotifications")
             ]
         ),
-        .binaryTarget(name: "MTPush", path: "mtpush-ios-5.2.1.xcframework"),
-        .binaryTarget(name: "MTMA", path: "MTMA-ios-5.2.1.xcframework")
+        .binaryTarget(name: "MTPush", path: "mtpush-ios-5.2.3.xcframework"),
+        .binaryTarget(name: "MTMA", path: "MTMA-ios-5.2.3.xcframework")
     ]
 )
