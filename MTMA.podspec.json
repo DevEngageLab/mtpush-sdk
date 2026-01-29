@@ -1,6 +1,6 @@
 {
   "name": "MTMA",
-  "version": "5.3.0",
+  "version": "5.3.1",
   "summary": "Offically supported MTMA iOS SDK Pod. ",
   "description": "Offically supported MTMA iOS SDK Pod.  ",
   "homepage": "https://www.engagelab.com/",
@@ -16,9 +16,9 @@
   },
   "source": {
     "git": "https://github.com/DevEngageLab/mtpush-sdk.git",
-    "tag": "5.3.0"
+    "tag": "5.3.1"
   },
-  "vendored_frameworks": "MTMA-ios-5.3.0.xcframework",
+  "vendored_frameworks": "MTMA-ios-5.3.1.xcframework",
   "frameworks": [
     "UIKit",
     "CFNetwork",
