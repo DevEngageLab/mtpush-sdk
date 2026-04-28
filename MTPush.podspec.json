@@ -1,6 +1,6 @@
 {
   "name": "MTPush",
-  "version": "5.3.2",
+  "version": "5.3.3",
   "summary": "Offically supported MTPush iOS SDK Pod. ",
   "description": "Offically supported MTPush iOS SDK Pod.  ",
   "homepage": "https://www.engagelab.com/",
@@ -16,9 +16,9 @@
   },
   "source": {
     "git": "https://github.com/DevEngageLab/mtpush-sdk.git",
-    "tag": "5.3.2"
+    "tag": "5.3.3"
   },
-  "vendored_frameworks": "mtpush-ios-5.3.2.xcframework",
+  "vendored_frameworks": "mtpush-ios-5.3.3.xcframework",
   "frameworks": [
     "UIKit",
     "CFNetwork",
