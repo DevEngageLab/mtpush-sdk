@@ -2,7 +2,7 @@
  * Copyright (c) 2011 ~ 2017 Shenzhen MT. All rights reserved.
  */
 
-#define MTP_VERSION_NUMBER 5.4.1
+#define MTP_VERSION_NUMBER 5.4.3
 
 #import <Foundation/Foundation.h>
 
@@ -24,6 +24,8 @@ typedef void (^MTPushTagValidOperationCompletion)(NSInteger iResCode, NSSet * _N
 typedef void (^MTPushAliasOperationCompletion)(NSInteger iResCode, NSString * _Nullable iAlias, NSInteger seq);
 typedef void (^MTPLiveActivityTokenCompletion)(NSInteger iResCode, NSString * _Nullable iLiveActivityId, NSData * _Nullable token, NSInteger seq);
 typedef void (^MTPushVoipTokenCompletion)(NSInteger iResCode, NSString * _Nullable msg);
+
+typedef void (^MTPushRegistrationCompletion)(NSInteger iResCode, NSString * _Nullable message);
 
 extern NSString *const kMTCNetworkIsConnectingNotification; // 正在连接中
 extern NSString *const kMTCNetworkDidSetupNotification;     // 建立连接
@@ -188,6 +190,7 @@ typedef NS_ENUM(NSUInteger, MTPushAuthorizationStatus) {
                 channel:(nullable NSString *)channel
        apsForProduction:(BOOL)isProduction;
 
+
 /*!
  * @abstract 启动SDK
  *
@@ -206,6 +209,23 @@ typedef NS_ENUM(NSUInteger, MTPushAuthorizationStatus) {
                 channel:(nullable NSString *)channel
        apsForProduction:(BOOL)isProduction
   advertisingIdentifier:(nullable NSString *)advertisingId;
+
+/*!
+ * @abstract 关闭推送服务。
+ * @discussion 阻止自动重连、断开长连接、停止客户端信息采集/上报，并注销当前 APNs Token。
+ * 关闭期间依赖推送网络和注册身份的接口不可用。
+ */
++ (void)turnOffPush:(nullable MTPushRegistrationCompletion)completion;
+
+/*!
+ * @abstract 使用新的初始化参数重新注册推送。
+ * @discussion SDK 会重新初始化、恢复长连接、自动调用 registerForRemoteNotifications，
+ * 新 deviceToken 通过 AppDelegate 回调交给 registerDeviceToken: 后自动上报。
+ */
++ (void)turnOnPush:(NSString *)appKey
+           channel:(nullable NSString *)channel
+  apsForProduction:(BOOL)isProduction
+advertisingIdentifier:(nullable NSString *)advertisingId;
 
 
 /*!

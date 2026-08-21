@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define MTMA_VERSION_NUMBER 5.4.1
+#define MTMA_VERSION_NUMBER 5.4.3
 
 NS_ASSUME_NONNULL_BEGIN
 @class MTMAUserID;
