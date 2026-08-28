@@ -2,7 +2,7 @@
  * Copyright (c) 2011 ~ 2017 Shenzhen MT. All rights reserved.
  */
 
-#define MTP_VERSION_NUMBER 5.4.3
+#define MTP_VERSION_NUMBER 5.4.4
 
 #import <Foundation/Foundation.h>
 
