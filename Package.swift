@@ -42,7 +42,7 @@ let package = Package(
         ),
         .target(
             name: "MTMAWrapper",
-            dependencies: ["MTPush","MTMA"], 
+            dependencies: ["MTMA"],
             path: "MTMAWrapper",
             linkerSettings: [ 
                 .linkedLibrary("z"),
@@ -58,7 +58,7 @@ let package = Package(
                 .linkedFramework("UserNotifications")
             ]
         ),
-        .binaryTarget(name: "MTPush", path: "mtpush-ios-5.4.4.xcframework"),
-        .binaryTarget(name: "MTMA", path: "MTMA-ios-5.4.4.xcframework")
+        .binaryTarget(name: "MTPush", path: "mtpush-ios-5.5.0.xcframework"),
+        .binaryTarget(name: "MTMA", path: "MTMA-ios-5.5.0.xcframework")
     ]
 )
