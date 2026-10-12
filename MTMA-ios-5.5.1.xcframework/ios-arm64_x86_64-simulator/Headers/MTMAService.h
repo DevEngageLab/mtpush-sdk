@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define MTMA_VERSION_NUMBER 5.5.0
+#define MTMA_VERSION_NUMBER 5.5.1
 
 NS_ASSUME_NONNULL_BEGIN
 @class MTMAUserID;
@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* 用户标识模型,当设置该属性时时会在初始化时进行设置用户标识 */
 @property (nullable, nonatomic, strong) MTMAUserID *userID;
+
+/** 本轮采集选择；@YES/@NO 显式指定，nil 默认开启。 */
+@property (nonatomic, strong, nullable) NSNumber *dataCollectionEnabled;
 
 /** 新版初始化结果回调；设置后优先于 completion。 */
 @property (nonatomic, copy) void (^resultCompletion)(MTMAInitResult *result);
@@ -63,6 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 + (void)start:(MTMAConfig *)config;
+
+/** 初始化成功后返回本地选择；未就绪返回 nil，不发请求。 */
++ (nullable NSNumber *)isDataCollectionEnabled;
+
+/** 初始化成功后设置本地采集选择；同值调用不会重复发起切换流程。 */
++ (void)setDataCollectionEnabled:(BOOL)enabled;
 
 /**
  设置用户标识
